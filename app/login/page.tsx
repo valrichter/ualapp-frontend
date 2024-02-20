@@ -1,19 +1,21 @@
-'use client'
+"use client";
 
 import Auth from "@/components/Auth";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import { toast } from "react-toastify";
 
 const Login = () => {
-	const onSubmit = (e: FormEvent<HTMLFormElement>,
-		formRef: React.RefObject<HTMLFormElement>
-		) => {
-		e.preventDefault();
-		toast("Login Toast", {
-			type: "success",
-		})
-	};
-	return <Auth showRemembered onSubmit={onSubmit} loading={false} />
+  const [loading, SetLoading] = useState(false);
+  const onSubmit = (
+    e: FormEvent<HTMLFormElement>,
+    formRef: React.RefObject<HTMLFormElement>
+  ) => {
+    e.preventDefault();
+    toast("Login Toast", {
+      type: "success",
+    });
+  };
+  return <Auth loading={loading} showRemembered onSubmit={onSubmit} />;
 };
 
-export default Login
+export default Login;
