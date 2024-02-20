@@ -9,10 +9,9 @@ const Register = () => {
 		formRef: React.RefObject<HTMLFormElement>
 		) => {
 		e.preventDefault();
-		toast("Resgister toast", {
+		toast(formRef.current?.email.value, {
 			type: "success",
 		})
-		console.log("Register")
 	};
 	return <Auth
 		onSubmit={onSubmit}

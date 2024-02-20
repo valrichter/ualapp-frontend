@@ -12,7 +12,6 @@ const Login = () => {
 		toast("Login Toast", {
 			type: "success",
 		})
-		console.log("Login")
 	};
 	return <Auth showRemembered onSubmit={onSubmit} loading={false} />
 };
