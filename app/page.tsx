@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <main>
-      Next.js
+      <h1>Welcome to Ualapp!</h1>
     </main>
   );
 }
