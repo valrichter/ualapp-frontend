@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const TestPublicKey = import.meta.env.VITE_PAYSTACK_PUBLIC_KEY;
 
-export type Currency = "USD" | "NGN";
+export type Currency = "USD" | "ARS";
 
 export interface MyPaystackProps {
   amount: number;
@@ -18,7 +18,7 @@ const usePaystack = () => {
   } = useStore();
   const [data, setData] = useState<MyPaystackProps>({
     amount: 0,
-    currency: "NGN",
+    currency: "ARS",
     callBack: () => {},
   });
 

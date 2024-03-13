@@ -20,7 +20,10 @@ const useAddAccount = () => {
   const form = useRef<HTMLFormElement>(null);
   const { axiosHandler } = useAxios();
 
-  const onSubmit = async (e: FormEvent<HTMLFormElement>, onComplete: () => void) => {
+  const onSubmit = async (
+    e: FormEvent<HTMLFormElement>,
+    onComplete: () => void
+  ) => {
     e.preventDefault();
     setLoading(true);
     let arg = {
@@ -44,11 +47,19 @@ const useAddAccount = () => {
         <DialogTrigger onClick={() => setDialogState(true)}>
           <Button>Add Account</Button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]" closeIcon={true} customClose={() => setDialogState(false)}>
+        <DialogContent
+          className="sm:max-w-[425px]"
+          closeIcon={true}
+          customClose={() => setDialogState(false)}
+        >
           <DialogHeader>
             <DialogTitle>Add Account</DialogTitle>
           </DialogHeader>
-          <form ref={form} onSubmit={(e) => onSubmit(e, onComplete)} className="pt-5">
+          <form
+            ref={form}
+            onSubmit={(e) => onSubmit(e, onComplete)}
+            className="pt-5"
+          >
             <LabelSelect
               labelProps={{ children: "Currency" }}
               id="currency"
@@ -58,7 +69,7 @@ const useAddAccount = () => {
                 name: "currency",
                 required: true,
                 items: [
-                  { key: "NGN", value: "NGN" },
+                  { key: "ARS", value: "ARS" },
                   { key: "USD", value: "USD" },
                 ],
               }}
@@ -75,7 +86,7 @@ const useAddAccount = () => {
   };
 
   return {
-    getAddAccount
+    getAddAccount,
   };
 };
 
