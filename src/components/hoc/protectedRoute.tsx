@@ -26,7 +26,7 @@ const ProtectedRoute = () => {
     const res = await axiosHandler<UserType>(
       userUrl.me,
       "GET",
-      "authorization",
+      undefined,
       true
     );
     if (res) {
