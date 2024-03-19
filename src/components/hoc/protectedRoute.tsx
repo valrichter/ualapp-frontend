@@ -23,7 +23,12 @@ const ProtectedRoute = () => {
       return;
     }
 
-    const res = await axiosHandler<UserType>(userUrl.me, "GET", null, true);
+    const res = await axiosHandler<UserType>(
+      userUrl.me,
+      "GET",
+      "authorization",
+      true
+    );
     if (res) {
       dispatch({ type: ActionTypes.UpdateUser, payload: res });
       setLoading(false);
